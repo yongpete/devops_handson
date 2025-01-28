@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #quoteSection {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #e0f7fa;
+      display: none;
+    }
+
+    h1 {
+      color: #00796b;
+    }
+
+    p {
+      color: #004d40;
+      font-size: 18px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button id="magicButton">Click to see magic</button>
+    <div id="quoteSection">
+      <h1>Welcome to Apache2 Webserver, Peter!</h1>
+      <p id="randomQuote"></p>
+      <br>
+      <br>
+      <p id="standard">***If you're seeing this page, the Apache2 web server is successfully installed</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('magicButton').addEventListener('click', () => {
+      const quotes = [
+        "To be or not to be, that is the question.",
+        "Life is what happens when you're busy making other plans.",
+        "In the middle of every difficulty lies opportunity.",
+        "The only way to do great work is to love what you do. – Steve Jobs",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+        "Believe you can and you're halfway there. – Theodore Roosevelt",
+        "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+        "The best time to plant a tree was 20 years ago. The second best time is now. – Chinese Proverb",
+        "Your time is limited, don’t waste it living someone else’s life. – Steve Jobs",
+        "The harder you work for something, the greater you’ll feel when you achieve it.",
+        "Dream big and dare to fail. – Norman Vaughan",
+        "It does not matter how slowly you go as long as you do not stop. – Confucius",
+        "Everything you’ve ever wanted is on the other side of fear. – George Addair",
+        "The only limit to our realization of tomorrow will be our doubts of today. – Franklin D. Roosevelt",
+        "What lies behind us and what lies before us are tiny matters compared to what lies within us. – Ralph Waldo Emerson", 
+        "Life isn’t about finding yourself. It’s about creating yourself. – George Bernard Shaw",
+        "What lies behind us and what lies before us are tiny matters compared to what lies within us. – Ralph Waldo Emerson",
+        "Life isn’t about finding yourself. It’s about creating yourself. – George Bernard Shaw",
+        "The journey of a thousand miles begins with a single step. – Lao Tzu",
+        "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+        "Courage is grace under pressure. – Ernest Hemingway",
+        "Opportunities don't happen. You create them. – Chris Grosser",
+        "Act as if what you do makes a difference. It does. – William James",
+        "You are never too old to set another goal or to dream a new dream. – C.S. Lewis",
+        "Success usually comes to those who are too busy to be looking for it. – Henry David Thoreau"
+      ];
+
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+      document.getElementById('randomQuote').textContent = randomQuote;
+      document.getElementById('quoteSection').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

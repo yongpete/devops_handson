@@ -1,0 +1,10 @@
+version: '3'
+services:
+  apache2:
+   build: ./
+   container_name: apache2_webserver
+   restart: always
+   volumes:
+     - ./:/var/lib/apache2
+   ports:
+     - 3035:80
