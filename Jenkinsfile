@@ -8,7 +8,6 @@ pipeline {
                 sh '''
                 rm -rf ./*
                 git clone https://github.com/yongpete/devops_handson.git
-                cd devops_handson
                 '''
             }
         }
@@ -16,6 +15,7 @@ pipeline {
         stage('Docker-compose') {
             steps {
                 sh '''
+                cd devops_handson
                 docker-compose down
                 docker-compose up -d
                 '''
