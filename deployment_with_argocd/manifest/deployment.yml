@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apacheapp
+  labels:
+    app: apache2 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apache2
+  template:
+    metadata:
+      labels:
+        app: apache2 
+    spec:
+      containers:
+      - name: apacheapp
+        image: ngohpete/apache2:latest
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apacheservice
+spec:
+  selector:
+    app: apache
+  ports:
+    - port: 80
+      targetPort: 5000
+  type: NodePort
