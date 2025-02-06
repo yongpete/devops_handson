@@ -10,7 +10,7 @@ spec:
   source:
     path: deployment_with_argocd/manifest
     repoURL: 'https://github.com/yongpete/devops_handson'
-    targetRevision: main
+    targetRevision: master
   project: default
   syncPolicy:
     automated:
